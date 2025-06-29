@@ -1,27 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href ="styles.css">
-    <title>SQUID GAMES</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="styles.css" />
+  <title>SQUID GAMES</title>
 </head>
 <body>
 
+<audio id="bg-music" loop>
+  <source src="mingle-squid-game.mp3" type="audio/mpeg" />
+  Your browser does not support the audio element.
+</audio>
+
 <div class="container">
-    <div class ="card">
-        <ion-icon name="ellipse-outline"></ion-icon>
-    </div>
-    <div class="card">
-        <ion-icon name="triangle-outline"></ion-icon>
-    </div>
-    <div class="card">
-        <ion-icon name="square-outline"></ion-icon>
-    </div>
+  <div class="card">
+    <ion-icon name="ellipse-outline"></ion-icon>
+  </div>
+  <div class="card">
+    <ion-icon name="triangle-outline"></ion-icon>
+  </div>
+  <div class="card">
+    <ion-icon name="square-outline"></ion-icon>
+  </div>
 </div>
+
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
+<script>
+  document.body.addEventListener('click', function () {
+    const music = document.getElementById('bg-music');
+    music.play().catch((e) => {
+      console.log("Autoplay failed:", e);
+    });
+  }, { once: true }); // only run on the first click
+</script>
 
 </body>
 </html>
